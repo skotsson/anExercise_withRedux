@@ -1,12 +1,18 @@
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useCallback } from 'react';
+import { deleteCartItem, addInventoryItem } from '../redux/actions/';
 
-import { deleteCartItem, addInventoryItem } from '../redux/actions';
+const Cart = () => {
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
-const Cart = ({ cart, deleteCartItem, addInventoryItem }) => {
-  const handleClick = (item) => {
-    addInventoryItem(item);
-    deleteCartItem(item);
-  };
+  const handleClick = useCallback(
+    (item) => {
+      dispatch(addInventoryItem(item));
+      dispatch(deleteCartItem(item));
+    },
+    [dispatch],
+  );
 
   return cart.map((item, i) => (
     <div className='items' key={`id_${i}`}>
@@ -16,13 +22,4 @@ const Cart = ({ cart, deleteCartItem, addInventoryItem }) => {
   ));
 };
 
-const mapStateToProps = (state) => ({
-  cart: state.cart,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  addInventoryItem: (payload) => dispatch(addInventoryItem(payload)),
-  deleteCartItem: (payload) => dispatch(deleteCartItem(payload)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default Cart;

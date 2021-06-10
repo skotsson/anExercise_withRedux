@@ -1,18 +1,18 @@
-import { connect } from 'react-redux';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { useCallback } from 'react';
 import { addCartItem, deleteInventoryItem } from '../redux/actions';
-// import store from '../index';
 
-const Shop = ({ inventory, addCartItem, deleteInventoryItem }) => {
-  const handleClick = (item) => {
-    addCartItem(item);
-    deleteInventoryItem(item);
-    console.log('dispatched');
+const Shop = () => {
+  const inventory = useSelector((state) => state.inventory);
+  const dispatch = useDispatch();
 
-    // const id = item.id;
-    // setCartItems([...cartItems, item]);
-    // setInventory([...inventory.filter((unit) => unit.id !== id)]);
-  };
+  const handleClick = useCallback(
+    (item) => {
+      dispatch(addCartItem(item));
+      dispatch(deleteInventoryItem(item));
+    },
+    [dispatch],
+  );
 
   return inventory.map((item, i) => (
     <div className='items' key={`id_${i}`}>
@@ -22,13 +22,4 @@ const Shop = ({ inventory, addCartItem, deleteInventoryItem }) => {
   ));
 };
 
-const mapStateToProps = (state) => ({
-  inventory: state.inventory,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  addCartItem: (payload) => dispatch(addCartItem(payload)),
-  deleteInventoryItem: (payload) => dispatch(deleteInventoryItem(payload)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Shop);
+export default Shop;
