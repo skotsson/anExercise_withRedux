@@ -1,7 +1,5 @@
-// todo: this is not yet implemented in the app
-
-const Button = () => {
-  return <button onClick={null}>Remove</button>;
+const Button = props => {
+  return <button onClick={props.onClick}>{props.children}</button>;
 };
 
 export default Button;
