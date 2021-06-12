@@ -72,10 +72,10 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border: 1px charcoal solid;
-  min-width: 30%;
+  border: 1px #4f6d7a solid;
+  min-width: 20%;
   width: 400px;
-  min-height: 80vh;
+  min-height: 40vh;
   border-radius: 20px;
   margin: 10px;
   color: #c0d6df;
