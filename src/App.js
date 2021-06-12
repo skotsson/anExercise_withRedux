@@ -22,7 +22,7 @@ export default App;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   margin: 50px;
 `;
 const PageTitle = styled.h1`
