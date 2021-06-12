@@ -1,4 +1,4 @@
-# Exercise
+# Exercise [live version is here](https://theportfolio.github.io/)
 
 ## Brief
 
@@ -7,10 +7,9 @@
 
 ## The App
 
-1. I chose 2 buckets, shop and cart
-2. to save time I did only a quick styling so that it would be easier to read and better organized
-3. this is a version using redux
-4. I chose to have the buttons move from one bucket the other
+1. 2 buckets, shop and cart
+2. move items from the shop into the cart
+3. using redux and react hooks
 
 ## to run - clone or download, cd into folder and run
 
