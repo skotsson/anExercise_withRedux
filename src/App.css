@@ -1,3 +1,12 @@
 body {
   background: #eaeaea;
 }
+
+.button:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #4f6d7a;
+}

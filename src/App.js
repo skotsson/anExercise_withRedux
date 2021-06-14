@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Bucket from './components/Bucket';
+import './App.css';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <a href='https://gotta-do.github.io'>note-taking app</a>
       </Text>
       <FooterText>
-        Development by<a href='http://www.github.com/iskoti'> iskoti</a>
+        Development by
+        <a href='https://github.com/iskoti/anExercise_withRedux'> iskoti</a>
       </FooterText>
     </React.Fragment>
   );
@@ -36,12 +38,10 @@ const Text = styled.h1`
   color: #4f6d7a;
   text-align: center;
   margin: 50px 100px;
-  text-decoration: none;
 `;
 
 const FooterText = styled.h6`
   color: #4f6d7a;
   text-align: center;
   margin: 10px 100px;
-  text-decoration: none;
 `;
